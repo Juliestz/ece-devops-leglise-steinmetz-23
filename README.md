@@ -3,7 +3,7 @@
 
 Projet Leglise Margaux et Steinmetz Julie
 
-## 1 Application
+## 1. Application
 
 On lance notre application NodeJS sur http://localhost:3000/ grâce à la commande "npm start" depuis le dossier userapi.
 
@@ -17,5 +17,7 @@ Aucune erreur détectée avec ```npm test``` :
 
 ![image](https://user-images.githubusercontent.com/62987942/220939204-831aea6b-bfba-42be-bea7-982cf4220fc1.png)
 ![image](https://user-images.githubusercontent.com/62987942/220939226-c3dfa72b-a8b4-424e-9087-6983cadc8f85.png)
+
+## 2. Workflows
 
 
