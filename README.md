@@ -1,8 +1,13 @@
 
-# ECE DevOps labs corrections
+# ECE DevOps
 
-This is a repository containing the corrections for the labs.
+Projet Leglise Margaux et Steinmetz Julie
 
-## Author
+## 1 Application
 
-Gonzalo Etse <gonzaloetjo@gmail.com.com>
+On lance notre application NodeJS sur http://localhost:3000/ grâce à la commande "npm start" depuis le dossier userapi.
+On obtient cette page :
+
+
+
+
