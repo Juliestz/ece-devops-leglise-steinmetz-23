@@ -18,6 +18,9 @@ Aucune erreur détectée avec ```npm test``` :
 ![image](https://user-images.githubusercontent.com/62987942/220939204-831aea6b-bfba-42be-bea7-982cf4220fc1.png)
 ![image](https://user-images.githubusercontent.com/62987942/220939226-c3dfa72b-a8b4-424e-9087-6983cadc8f85.png)
 
-## 2. Workflows
+## 2. Méthode CI/CD
 
+On utilise l'intégration et la livraison continue (CI/CD) :
+
+![image](https://user-images.githubusercontent.com/62987942/220990022-d0dd28c5-63a1-4fd3-80c1-05702486c34c.png)
 
