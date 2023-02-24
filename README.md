@@ -32,7 +32,8 @@ On réalise la livraison continue grâce à Microsoft Azure :
 
 ## 3. L'approche IaC pour configurer et approvisionner un environnement virtuel et exécuter notre application
 
-Pour implémenter l'approche IaC dans notre projet, il va falloir installer Vagrant et VirtualBox pour créer un environnement virtuel.
+Pour implémenter l'approche IaC dans notre projet, il va falloir installer Vagrant.
+Il nous faudra aussi installer VirtualBox pour créer un environnement virtuel pour déployer notre appliation.
 Ensuite on télécharge centos/7 avec la commande : ```vagrant box add centos/7``` 
 
 centos/7 se télécharge pour ensuite apparaitre dans VirtualBox :
