@@ -3,16 +3,13 @@
 
 Projet Leglise Margaux et Steinmetz Julie
 
-## 1. Application
-```bash
+## 1. Installation
+
+#### Installer NodeJS :
 [Install NodeJS](https://nodejs.org/en/download/)
-```
 
-```bash
-npm install
-```
+#### Installer redis :
 
-### Installer redis :
 Windows :
 
 [Install Redis](https://redis.com/ebook/appendix-a/a-3-installing-on-windows/a-3-2-installing-redis-on-window/)
@@ -22,7 +19,36 @@ MacOS :
 brew install redis 
 ```
 
-On lance notre application NodeJS sur http://localhost:3000/ grâce à la commande "npm start" depuis le dossier userapi.
+#### Se placer dans le fichier 'userapi' puis lancer :
+
+```bash
+npm install
+```
+
+#### Lancer redis :
+
+Windows :
+```bash
+sudo service redis-server start
+```
+
+MacOS :
+```bash
+redis-server
+```
+
+On obtient :
+<img width="1337" alt="Capture d’écran 2023-02-26 à 16 27 43" src="https://user-images.githubusercontent.com/91328888/221420086-52743659-ea2f-49c4-9efa-53a074538bf8.png">
+
+
+#### Lancer le serveur web :
+
+
+On lance notre application NodeJS sur http://localhost:3000/ grâce à 
+la commande suivante depuis le dossier userapi :
+```bash
+npm start
+```
 
 ![image](https://user-images.githubusercontent.com/62987942/220938939-2fd702f6-af83-4291-b39b-e691a2532214.png)
 
@@ -30,16 +56,34 @@ On obtient cette page :
 
 ![image](https://user-images.githubusercontent.com/62987942/220938843-87317e13-c19d-4d12-97e0-5d2d1e5dca11.png)
 
+
+#### Ajouter un utilisateur :
+
+Dans le terminal, lancer : 
+```bash
+curl --header "Content-Type: application/json" \
+  --request POST \
+  --data '{"username":"sergkudinov","firstname":"sergei","lastname":"kudinov"}' \
+  http://localhost:3000/user
+```
+
+Cela devrait afficher :
+```bash
+{"status":"success","msg":"OK"}
+```
+
+#### Test
+
 Aucune erreur détectée avec ```npm test``` :
 
 ![image](https://user-images.githubusercontent.com/62987942/220939204-831aea6b-bfba-42be-bea7-982cf4220fc1.png)
 ![image](https://user-images.githubusercontent.com/62987942/220939226-c3dfa72b-a8b4-424e-9087-6983cadc8f85.png)
 
-On utilise redis :
-<img width="1337" alt="Capture d’écran 2023-02-26 à 16 27 43" src="https://user-images.githubusercontent.com/91328888/221420086-52743659-ea2f-49c4-9efa-53a074538bf8.png">
-
 
 ## 2. Méthode CI/CD
+
+1. Création d'un workflow dans *Actions* sur GitHub.
+2. Création d'une branch *test* pour tester le code avant de commmit dans le code principal.
 
 On utilise l'intégration et la livraison continue (CI/CD).
 
