@@ -82,9 +82,6 @@ Aucune erreur détectée avec ```npm test``` :
 
 ## 2. Méthode CI/CD
 
-1. Création d'un workflow dans *Actions* sur GitHub.
-2. Création d'une branch *test* pour tester le code avant de commmit dans le code principal.
-
 On utilise l'intégration et la livraison continue (CI/CD).
 
 On réalise l'intégration continue grâce à Github Actions et les workflows. Cela permet de réaliser une intégration plus régulière.
@@ -95,23 +92,18 @@ On réalise la livraison continue grâce à Microsoft Azure :
 
 ![image](https://user-images.githubusercontent.com/62987942/221031793-9ee36657-a96b-4643-aa9d-3a77985340c3.png)
 
+
 ## 3. L'approche IaC pour configurer et approvisionner un environnement virtuel et exécuter notre application
 
 Pour implémenter l'approche IaC dans notre projet, il va falloir installer Vagrant.
 Il nous faudra aussi installer VirtualBox pour créer un environnement virtuel pour déployer notre appliation.
-Ensuite on télécharge centos/7 avec la commande : ```vagrant box add centos/7``` 
-
-centos/7 se télécharge pour ensuite apparaitre dans VirtualBox :
-
-![image](https://user-images.githubusercontent.com/62987942/221034589-872279ce-38ab-44a1-994b-61c5d6a87ff6.png)
-
-
-##### bjhiuhouo
 
 1. [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 2. [Install Vagrant](https://www.vagrantup.com/downloads.html)
 
-*Download centos/7 :*
+#### Se placer dans le dossier iac
+
+*Télécharger centos/7 :*
 
 ```bash
 vagrant box add centos/7
@@ -132,11 +124,16 @@ the provider you will be working with.
 Enter your choice: 
 ```
 
-*Run the command :*
+centos/7 se télécharge pour ensuite apparaitre dans VirtualBox :
+
+![image](https://user-images.githubusercontent.com/62987942/221034589-872279ce-38ab-44a1-994b-61c5d6a87ff6.png)
+
+#### Lancer la commande :
 ```bash
 vagrant up
 ```
-*Other vagrant commands :*
+
+*Autres commandes vagrant :*
 ```bash
 # will check VMs status
 vagrant status 
@@ -150,19 +147,5 @@ vagrant destroy
 *Enter to the VM via SSH :*
 ```bash
 vagrant ssh
-```
-
-## Build Docker image
-[Install Docker](https://www.docker.com/products/docker-desktop/)
-
-
-## Make docker orchestration using Kubernetes
-*Install Minikube :*
-```bash
-brew install minikube
-```
-*Start cluster :*
-```bash
-minikube start
 ```
 
