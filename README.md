@@ -18,6 +18,10 @@ Aucune erreur détectée avec ```npm test``` :
 ![image](https://user-images.githubusercontent.com/62987942/220939204-831aea6b-bfba-42be-bea7-982cf4220fc1.png)
 ![image](https://user-images.githubusercontent.com/62987942/220939226-c3dfa72b-a8b4-424e-9087-6983cadc8f85.png)
 
+On utilise redis :
+<img width="1337" alt="Capture d’écran 2023-02-26 à 16 27 43" src="https://user-images.githubusercontent.com/91328888/221420086-52743659-ea2f-49c4-9efa-53a074538bf8.png">
+
+
 ## 2. Méthode CI/CD
 
 On utilise l'intégration et la livraison continue (CI/CD).
@@ -39,4 +43,5 @@ Ensuite on télécharge centos/7 avec la commande : ```vagrant box add centos/7`
 centos/7 se télécharge pour ensuite apparaitre dans VirtualBox :
 
 ![image](https://user-images.githubusercontent.com/62987942/221034589-872279ce-38ab-44a1-994b-61c5d6a87ff6.png)
+
 
