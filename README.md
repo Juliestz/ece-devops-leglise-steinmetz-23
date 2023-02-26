@@ -148,4 +148,4 @@ vagrant destroy
 ```bash
 vagrant ssh
 ```
-
+Création centos //

@@ -33,3 +33,6 @@ Vagrant.configure("2") do |config|
     inline: "echo Hello, World"
 
 end
+
+
+
