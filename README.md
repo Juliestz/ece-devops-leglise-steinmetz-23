@@ -186,6 +186,13 @@ Résultats :
 
 [installer Docker Desktop](https://docs.docker.com/get-docker/)
 
+Pour vérifier que l'installation s'est passé correctement, on appel la commande suivante :
+```bash
+docker run hello-world
+```
 
+On obtient la réponse :
+
+![image](https://user-images.githubusercontent.com/62987942/221428266-1b8265a7-2c29-4bd9-ba9e-1495ce0613e4.png)
 
 
