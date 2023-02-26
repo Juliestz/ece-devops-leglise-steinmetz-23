@@ -195,7 +195,9 @@ On obtient la réponse :
 
 ![image](https://user-images.githubusercontent.com/62987942/221428266-1b8265a7-2c29-4bd9-ba9e-1495ce0613e4.png)
 
-Pour créer une image on exécute la commande suivante :
+### Créer une image Docker :
+
+On exécute la commande suivante :
 ```bash
 docker build -t margauxlgls/userapidocker .
 ```
@@ -217,5 +219,15 @@ docker run -p 8000:3080  margauxlgls/userapidocker
 On obtient :
 ![image](https://user-images.githubusercontent.com/62987942/221429191-eea2a789-b164-4981-ad7d-138a8abefbe5.png)
 
+### Partager un conteneur Docker avec un camarade
 
+On se login dans Docker Hub depuis notre terminal :
 
+![image](https://user-images.githubusercontent.com/62987942/221430152-b4bff97f-ff2f-4b72-aedf-f37689fadc70.png)
+
+On push l'image dans Docker Hub :
+
+![image](https://user-images.githubusercontent.com/62987942/221430303-3d629d1f-b8a9-401a-8ade-54339c7d0758.png)
+
+Dans notre groupe, l'un de nos ordinateurs (Windows) ne peut pas faire tourner Docker car le projet est situé dans une VM Ubuntu sur Virtualbox et Docker Desktop n'est pas fait pour être lancé sur un environnement Ubuntu.
+On ne peut donc pas récupérer le container sur notre deuxième ordi.
