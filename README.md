@@ -137,7 +137,6 @@ Une VM centos.server.local est créée dans Virtualbox :
 
 ![image](https://user-images.githubusercontent.com/62987942/221423615-296d58f3-73d0-4b20-95c7-e4946aeabd38.png)
 
-
 *Autres commandes vagrant :*
 ```bash
 # will check VMs status
@@ -149,10 +148,40 @@ vagrant halt
 # will destroy VMs
 vagrant destroy
 ```
-*Accéder à la VM via SSH :*
+
+####  Afficher la date du jour dans /etc/vagrant_provisioned_at :
+
+Rempalcer dans le fichier Vagrantfile la partie ce qui suit :
+
+```
+# Start provisioning
+$script = <<-SCRIPT
+echo I am provisioning...
+date > /etc/vagrant_provisioned_at
+SCRIPT
+
+config.vm.provision "shell", inline: $script
+```
+
+Exécuter la commande suivante : 
+```bash
+vagrant provision
+```
+Cette commande permet d'apporter des modifications à la configuration d'une VM déjà existante.
+
+Entrer dans la VM :
 ```bash
 vagrant ssh
 ```
+```bash
+cat /etc/vagrant_provisioned_at
+```
+
+Résultats :
 
 <img width="608" alt="Capture d’écran 2023-02-26 à 17 45 09" src="https://user-images.githubusercontent.com/91328888/221424172-8b99421b-9327-4139-af8b-5433c172410f.png">
+
+
+
+
 
