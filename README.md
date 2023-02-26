@@ -4,6 +4,23 @@
 Projet Leglise Margaux et Steinmetz Julie
 
 ## 1. Application
+```bash
+[Install NodeJS](https://nodejs.org/en/download/)
+```
+
+```bash
+npm install
+```
+
+### Installer redis :
+Windows :
+
+[Install Redis](https://redis.com/ebook/appendix-a/a-3-installing-on-windows/a-3-2-installing-redis-on-window/)
+
+MacOS :
+```bash
+brew install redis 
+```
 
 On lance notre application NodeJS sur http://localhost:3000/ grâce à la commande "npm start" depuis le dossier userapi.
 
@@ -44,4 +61,64 @@ centos/7 se télécharge pour ensuite apparaitre dans VirtualBox :
 
 ![image](https://user-images.githubusercontent.com/62987942/221034589-872279ce-38ab-44a1-994b-61c5d6a87ff6.png)
 
+
+##### bjhiuhouo
+
+1. [Install VirtualBox](https://www.virtualbox.org/wiki/Downloads)
+2. [Install Vagrant](https://www.vagrantup.com/downloads.html)
+
+*Download centos/7 :*
+
+```bash
+vagrant box add centos/7
+```
+Quand le message suivant s'affiche, tapez 3) :
+
+```
+==> box: Loading metadata for box 'centos/7'
+   box: URL: https://vagrantcloud.com/centos/7
+This box can work with multiple providers! The providers that it can work with are listed below. Please review the list and   choose
+the provider you will be working with.
+
+1) hyperv
+2) libvirt
+3) virtualbox
+4) vmware_desktop
+
+Enter your choice: 
+```
+
+*Run the command :*
+```bash
+vagrant up
+```
+*Other vagrant commands :*
+```bash
+# will check VMs status
+vagrant status 
+
+# stop the VMs
+vagrant halt
+
+# will destroy VMs
+vagrant destroy
+```
+*Enter to the VM via SSH :*
+```bash
+vagrant ssh
+```
+
+## Build Docker image
+[Install Docker](https://www.docker.com/products/docker-desktop/)
+
+
+## Make docker orchestration using Kubernetes
+*Install Minikube :*
+```bash
+brew install minikube
+```
+*Start cluster :*
+```bash
+minikube start
+```
 
