@@ -128,10 +128,15 @@ centos/7 se télécharge pour ensuite apparaitre dans VirtualBox :
 
 ![image](https://user-images.githubusercontent.com/62987942/221034589-872279ce-38ab-44a1-994b-61c5d6a87ff6.png)
 
-#### Lancer la commande :
+#### Lancer la commande suivante une fois situé dans le dossier iac/part-1 :
 ```bash
 vagrant up
 ```
+
+Une VM centos.server.local est créée dans Virtualbox :
+
+![image](https://user-images.githubusercontent.com/62987942/221423615-296d58f3-73d0-4b20-95c7-e4946aeabd38.png)
+
 
 *Autres commandes vagrant :*
 ```bash
@@ -144,8 +149,7 @@ vagrant halt
 # will destroy VMs
 vagrant destroy
 ```
-*Enter to the VM via SSH :*
+*Accéder à la VM via SSH :*
 ```bash
 vagrant ssh
 ```
-Création centos //
