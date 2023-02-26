@@ -195,4 +195,27 @@ On obtient la réponse :
 
 ![image](https://user-images.githubusercontent.com/62987942/221428266-1b8265a7-2c29-4bd9-ba9e-1495ce0613e4.png)
 
+Pour créer une image on exécute la commande suivante :
+```bash
+docker build -t margauxlgls/userapidocker .
+```
+Cela génère une image Docker :
+
+![image](https://user-images.githubusercontent.com/62987942/221428593-1d7dba52-bb66-4aba-acdd-6ea8f08ff493.png)
+
+Pour voir toutes les images générés, on peut tapper la commande : 
+```bash
+docker images
+```
+![image](https://user-images.githubusercontent.com/62987942/221429248-df842b2f-8250-4cb8-a731-d881e12d36da.png)
+
+Pour lancer le container Docker, on utilise la commande :
+```bash
+docker run -p 8000:3080  margauxlgls/userapidocker
+```
+
+On obtient :
+![image](https://user-images.githubusercontent.com/62987942/221429191-eea2a789-b164-4981-ad7d-138a8abefbe5.png)
+
+
 
