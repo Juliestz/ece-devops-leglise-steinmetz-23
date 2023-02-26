@@ -153,3 +153,6 @@ vagrant destroy
 ```bash
 vagrant ssh
 ```
+
+<img width="608" alt="Capture d’écran 2023-02-26 à 17 45 09" src="https://user-images.githubusercontent.com/91328888/221424172-8b99421b-9327-4139-af8b-5433c172410f.png">
+
