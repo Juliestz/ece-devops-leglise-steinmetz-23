@@ -283,7 +283,7 @@ Pour afficher les logs d'un pod :
 ```bash
 kubectl logs $POD_NAME
 ```
-Ici $POD_NAME a été donné avec la commande précédente : kubernetes-bootcamp-75c5d958ff-kjgrb
+Ici on remplace $POD_NAME par le nom du pod affiché avec la commande précédente : kubernetes-bootcamp-75c5d958ff-kjgrb
 
 ![image](https://user-images.githubusercontent.com/62987942/221912556-d062941e-270b-45b2-8068-bce9452d0d92.png)
 
@@ -309,6 +309,18 @@ Pour obtenir l'adresse ip de notre VM minikube :
 minikube ip
 ```
 
+On obtient :
+
 ![image](https://user-images.githubusercontent.com/62987942/221916160-1dccf8a2-9062-4615-b95e-bb12dc4a2b8d.png)
 
+Pour ouvrir l'application web, on entre la commande suivante :
+```bash
+minikube service $SERVICE_NAME
+```
+Avec $SERVICE_NAME = kubernetes-bootcamp
 
+On obtient :
+
+![image](https://user-images.githubusercontent.com/62987942/221918128-04673c79-80a6-4223-b523-8879ecfe1365.png)
+
+Une page web est ouverte automatiquement mais elle ne charge rien.
