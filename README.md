@@ -278,3 +278,37 @@ kubectl get pods
 ```
 
 ![image](https://user-images.githubusercontent.com/62987942/221893658-728a521f-1e4a-471e-b0cc-4e02739a2fcf.png)
+
+Pour afficher les logs d'un pod :
+```bash
+kubectl logs $POD_NAME
+```
+Ici $POD_NAME a été donné avec la commande précédente : kubernetes-bootcamp-75c5d958ff-kjgrb
+
+![image](https://user-images.githubusercontent.com/62987942/221912556-d062941e-270b-45b2-8068-bce9452d0d92.png)
+
+Pour ouvrir un shell à l'intérieur de ce pod, on entre la commande suivante :
+```bash
+kubectl exec -ti kubernetes-bootcamp-75c5d958ff-kjgrb -- /bin/bash
+```
+
+![image](https://user-images.githubusercontent.com/62987942/221913389-a356fcc9-dc02-4148-9aaf-258c1eb5311d.png)
+
+Pour rendre accessible le cluster de Kubernetes depuis l'extérieur, on utilise :
+```bash
+kubectl expose deployments/$DEPLOYMENT_NAME --type="NodePort" --port $PORT_NUMBER
+```
+Avec nos informations : $DEPLOYMENT_NAME = kubernetes-bootcamp et $PORT_NUMBER = 8080
+
+Pour connaitre le port qui est rattaché au service :
+```bash
+kubectl get services
+```
+Pour obtenir l'adresse ip de notre VM minikube :
+```bash
+minikube ip
+```
+
+![image](https://user-images.githubusercontent.com/62987942/221916160-1dccf8a2-9062-4615-b95e-bb12dc4a2b8d.png)
+
+
