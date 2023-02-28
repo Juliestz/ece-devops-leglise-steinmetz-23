@@ -231,3 +231,50 @@ On push l'image dans Docker Hub :
 
 Dans notre groupe, l'un de nos ordinateurs (Windows) ne peut pas faire tourner Docker car le projet est situé dans une VM Ubuntu sur Virtualbox et Docker Desktop n'est pas fait pour être lancé sur un environnement Ubuntu.
 On ne peut donc pas récupérer le container sur notre deuxième ordi.
+
+## 5. Container Orchestration avec Docker Compose
+
+On créer un fichier docker-compose.yaml qui contient toutes les informations du conteneur que nous avons créer précédement.
+Pour créer et démarer ce conteneur, on utilise la commande suivante :
+```bash
+docker compose up
+```
+
+![image](https://user-images.githubusercontent.com/62987942/221891741-4e9f210d-fe34-45cf-b5c7-9ac656619348.png)
+![image](https://user-images.githubusercontent.com/62987942/221891761-1fc80eec-f193-494d-ab93-5dacc09d8cd1.png)
+
+## 6. Docker Orchestration avec les Kubernetes
+
+### On doit premièrement installer Minikube :
+
+[Install Minikube](https://minikube.sigs.k8s.io/docs/start/)
+
+Ensuite, on lance Minikube avec la commande :
+```bash
+minikube start --driver=docker
+```
+
+![image](https://user-images.githubusercontent.com/62987942/221892394-0c6b572f-022b-4fa1-9043-b70b547429b5.png)
+
+Puis on vérifie que tous est bon :
+```bash
+minikube status
+```
+
+![image](https://user-images.githubusercontent.com/62987942/221892467-dacd965d-9566-4caf-acf5-a014607509f7.png)
+
+### Utiliser kubectl
+
+On lance le déploiement avec un pod :
+```bash
+kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
+```
+
+![image](https://user-images.githubusercontent.com/62987942/221893404-fc25667c-5772-4ab7-9f81-9425b3ec345e.png)
+
+Pour afficher la liste de tous les pods en cours d'exécution :
+```bash
+kubectl get pods
+```
+
+![image](https://user-images.githubusercontent.com/62987942/221893658-728a521f-1e4a-471e-b0cc-4e02739a2fcf.png)
