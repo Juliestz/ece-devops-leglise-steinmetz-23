@@ -393,14 +393,14 @@ kubectl apply -f lab/hostPath/deployment.yml
 ```
 On vérifie qu'il est bien en cours d'exécution :
 
-![image](https://user-images.githubusercontent.com/62987942/222970302-ee609ee5-c055-428b-945e-fe99aeeef7b3.png)
+![image](https://user-images.githubusercontent.com/62987942/222971742-cea9b522-7b7f-4772-b426-706585748fc0.png)
 
 Puis comme pour emptyDir, on entre la commande :
 ```bash
 curl localhost
 ```
 
-![image](https://user-images.githubusercontent.com/62987942/222970500-67a227d3-3eec-4a14-922d-a8b87501b0e3.png)
+![image](https://user-images.githubusercontent.com/62987942/222971880-80b612aa-8ea9-4ec9-a97b-2bac311e6f4b.png)
 
 Comme vu précédement, on obtient ce résultat car il n'y a pas de fichier index.html. On va donc le créer :
 ```bash
@@ -412,4 +412,68 @@ sudo echo 'Hello from Kubernetes storage!' > /mnt/hostPath/index.html
 On peut alors relancer la commande :
 
 ![image](https://user-images.githubusercontent.com/62987942/222970940-0d4ed2b3-ed0d-411d-8793-d8347920b041.png)
+
+## PersistentVolume
+
+Pour utiliser un PersistentVolume, il faut ouvrir un shell avec minikube :
+```bash
+minikube ssh
+```
+Puis on créer un dossier data et un fichier index.html :
+```bash
+mkdir /mnt/data
+sh -c "echo 'Hello from Kubernetes storage' > /mnt/data/index.html"
+```
+On obtient le résultat suivant :
+
+![image](https://user-images.githubusercontent.com/62987942/222972369-0563f72d-d4b6-4cc1-8f5a-01b6990807c6.png)
+
+On créer le PersistantVolume et on affiche ses informations avec les commande ci-dessous :
+```bash
+kubectl apply -f https://k8s.io/examples/pods/storage/pv-volume.yaml
+kubectl get pv task-pv-volume
+```
+
+![image](https://user-images.githubusercontent.com/62987942/222972462-39af821b-8367-4cf4-88cd-217df7378b9a.png)
+
+On créer le PersistantVolumeClaim avec la commande ci-dessous :
+```bash
+kubectl apply -f https://k8s.io/examples/pods/storage/pv-claim.yaml
+```
+
+On affiche de nouveau les informations du PersistantVolume et on peut observer sur l'image ci-dessous que le statut est passé de "Available" à "Bound" :
+
+![image](https://user-images.githubusercontent.com/62987942/222972817-76c52541-a07a-4d42-af2b-aecd77e9c956.png)
+
+On peut aussi afficher les informations du PersistantVolumeClaim avec la commande suivante :
+```bash
+kubectl get pvc task-pv-claim
+```
+![image](https://user-images.githubusercontent.com/62987942/222973344-f8fa4956-052a-4307-9147-0cf13b76fa9d.png)
+
+On observe que nos deux volumes sont liés.
+
+On va maintenant créer un pod :
+```bash
+kubectl apply -f https://k8s.io/examples/pods/storage/pv-pod.yaml
+kubectl get pod task-pv-pod
+```
+
+![image](https://user-images.githubusercontent.com/62987942/222973600-35405a8c-cae5-4a27-815b-98c797ec26f9.png)
+
+On ouvre un shell dans ce pod avec la commande suivante :
+```bash
+kubectl exec -it task-pv-pod -- /bin/bash
+```
+
+Puis on entre ces commandes suivantes pour vérifier si le serveur web Nginx fonctionne correctement et si le fichier index.html est accessible à partir du volume hostPath :
+```bash
+apt update
+apt install curl
+curl http://localhost/
+```
+
+On obtient le résultat suivant :
+
+![image](https://user-images.githubusercontent.com/62987942/222974144-e7fe6205-b536-4df5-ad3d-bed614440915.png)
 
