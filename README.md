@@ -324,3 +324,29 @@ On obtient :
 ![image](https://user-images.githubusercontent.com/62987942/221918128-04673c79-80a6-4223-b523-8879ecfe1365.png)
 
 Une page web est ouverte automatiquement mais elle ne charge rien.
+
+
+Pour faire évoluer notre déploiement vers un déploiement à 5 pods, on utilise :
+```bash
+kubectl scale deployments/kubernetes-bootcamp --replicas=5
+```
+Et on affiche les pods qui sont en cours d'exécution avec :
+```bash
+kubectl get pods
+```
+
+On obtient :
+
+![image](https://user-images.githubusercontent.com/62987942/222966907-5ae98442-2376-41f1-9edb-d44ec9609869.png)
+
+![image](https://user-images.githubusercontent.com/62987942/222966969-00492535-7126-4955-aeb8-35d80529a8a8.png)
+
+Pour déployer notre application en utilisant les fichiers Manifest yaml, on entre les commandes suivantes :
+```bash
+kubectl apply -f deployment.yaml
+```
+```bash
+kubectl apply -f service.yaml
+```
+
+![image](https://user-images.githubusercontent.com/62987942/222967092-b3c11e57-e01e-4138-83f8-48421683c5f2.png)
