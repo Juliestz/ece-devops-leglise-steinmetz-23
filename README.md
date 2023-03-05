@@ -350,3 +350,66 @@ kubectl apply -f service.yaml
 ```
 
 ![image](https://user-images.githubusercontent.com/62987942/222967092-b3c11e57-e01e-4138-83f8-48421683c5f2.png)
+
+![image](https://user-images.githubusercontent.com/62987942/222968869-2e87f2aa-fe7e-4849-a848-33b7350468e0.png)
+
+## Utilisation du stockage emptyDir
+
+On lance l'exécution d'un pod avec la configuration du fichier emptyDir/deployment.yml :
+```bash
+kubectl apply -f lab/emptyDir/deployment.yml
+```
+On observe que notre pod est bien créé et on note son nom :
+
+![image](https://user-images.githubusercontent.com/62987942/222969396-a3e32f65-47a6-4b10-a0c8-93559371ac7a.png)
+
+On va entrer dans ce container avec la commande suivante : Nginx-empty-dir-8f99bd897-rkzjm
+```bash
+kubectl exec -it nginx-empty-dir-8f99bd897-rkzjm bash
+```
+
+Une fois dedans, on peut entrer la commande :
+```bash
+curl localhost
+```
+
+![image](https://user-images.githubusercontent.com/62987942/222969574-fac8aaa2-395b-452c-8c56-7c374a13b211.png)
+
+On obtient ce résultat car aucun fichier index.html ne correspond.
+
+Pour créer ce fichier index.html, on se place bien dans le conteneur et on tappe la commande suivante :
+```bash
+echo 'Hello from Kubernetes storage!' > /usr/share/nginx/html/index.html
+```
+On obtient le résultat suivant :
+
+![image](https://user-images.githubusercontent.com/62987942/222969933-caf36fec-aac8-43c1-b3e2-98611e400a02.png)
+
+## Utilisation du stockage hostPath
+
+On lance l'exécution d'un pod avec la configuration du fichier hostPath/deployment.yml :
+```bash
+kubectl apply -f lab/hostPath/deployment.yml
+```
+On vérifie qu'il est bien en cours d'exécution :
+
+![image](https://user-images.githubusercontent.com/62987942/222970302-ee609ee5-c055-428b-945e-fe99aeeef7b3.png)
+
+Puis comme pour emptyDir, on entre la commande :
+```bash
+curl localhost
+```
+
+![image](https://user-images.githubusercontent.com/62987942/222970500-67a227d3-3eec-4a14-922d-a8b87501b0e3.png)
+
+Comme vu précédement, on obtient ce résultat car il n'y a pas de fichier index.html. On va donc le créer :
+```bash
+sudo mkdir /mnt/hostPath
+sudo chmod -R 777 /mnt/hostPath
+sudo echo 'Hello from Kubernetes storage!' > /mnt/hostPath/index.html
+```
+
+On peut alors relancer la commande :
+
+![image](https://user-images.githubusercontent.com/62987942/222970940-0d4ed2b3-ed0d-411d-8793-d8347920b041.png)
+
