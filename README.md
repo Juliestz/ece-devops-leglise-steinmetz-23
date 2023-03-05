@@ -479,3 +479,25 @@ On obtient le résultat suivant :
 
 ![image](https://user-images.githubusercontent.com/62987942/222974144-e7fe6205-b536-4df5-ad3d-bed614440915.png)
 
+## Utiliser Istio, Prometheus et Graphana
+
+Pour utiliser le service mesh Istio et le système de monitoring Prometheus pour déployer notre application, il faut dabord commencer par les installer :
+
+[Install Istio](https://istio.io/latest/docs/setup/getting-started/)
+
+[Install Prometheus](https://istio.io/latest/docs/ops/integrations/prometheus/)
+
+![image](https://user-images.githubusercontent.com/62987942/222975264-b9cbdf9b-fbdc-47c2-9df2-75a65f1099c6.png)
+
+Pour pouvoir exporter des métriques de performance de notre application vers Prometheus en utilisant le format adéquat, il faut entrer la commande suivante :
+```bash
+npm install prom-client
+```
+
+Il faut également installer la plateforme de visualisation de données et de monitoring Graphana :
+
+[Install Graphana](https://istio.io/latest/docs/ops/integrations/grafana/)
+
+![image](https://user-images.githubusercontent.com/62987942/222975665-c0a8e500-e330-4b53-a38f-6646f0cc232f.png)
+
+Pour pouvoir déployer notre application, il a ensuite fallu créer tous les dossiers et fichiers dans notre projet.
