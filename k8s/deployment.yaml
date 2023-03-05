@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kubernetes-bootcamp
+  labels:
+    app: kubernetes-bootcamp
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: kubernetes-bootcamp
+  template:
+    metadata:
+      labels:
+        app: kubernetes-bootcamp
+    spec:
+      containers:
+      - name: kubernetes-bootcamp
+        image: gcr.io/google-samples/kubernetes-bootcamp:v1
+  apiVersion: apps/v1
+  kind: Deployment
+  metadata:
+  name: nginx-empty-dir
+  labels:
+    app: nginx-empty-dir
+  spec:
+    replicas: 1
+    selector:
+    matchLabels:
+      app: nginx-empty-dir
+    template:
+    metadata:
+      labels:
+        app: nginx-empty-dir
+    spec:
+      volumes:
+      # TODO complete
+      containers:
+        - name: nginx-container
+          image: nginx
+          ports:
+            - containerPort: 80
+              name: "http-server"
+          volumeMounts:
+          # TODO complete

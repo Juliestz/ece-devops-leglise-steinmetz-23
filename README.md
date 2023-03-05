@@ -232,6 +232,8 @@ On push l'image dans Docker Hub :
 Dans notre groupe, l'un de nos ordinateurs (Windows) ne peut pas faire tourner Docker car le projet est situé dans une VM Ubuntu sur Virtualbox et Docker Desktop n'est pas fait pour être lancé sur un environnement Ubuntu.
 On ne peut donc pas récupérer le container sur notre deuxième ordi.
 
+
+
 ## 5. Container Orchestration avec Docker Compose
 
 On créer un fichier docker-compose.yaml qui contient toutes les informations du conteneur que nous avons créer précédement.
