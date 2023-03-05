@@ -1,7 +1,7 @@
 
 # ECE DevOps
 
-Projet Leglise Margaux et Steinmetz Julie
+*Projet Leglise Margaux et Steinmetz Julie*
 
 ## 1. Installation
 
