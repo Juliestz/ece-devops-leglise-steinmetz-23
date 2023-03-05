@@ -355,7 +355,7 @@ kubectl apply -f service.yaml
 
 ![image](https://user-images.githubusercontent.com/62987942/222968869-2e87f2aa-fe7e-4849-a848-33b7350468e0.png)
 
-## Utilisation du stockage emptyDir
+### Utilisation du stockage emptyDir
 
 On lance l'exécution d'un pod avec la configuration du fichier emptyDir/deployment.yml :
 ```bash
@@ -387,7 +387,7 @@ On obtient le résultat suivant :
 
 ![image](https://user-images.githubusercontent.com/62987942/222969933-caf36fec-aac8-43c1-b3e2-98611e400a02.png)
 
-## Utilisation du stockage hostPath
+### Utilisation du stockage hostPath
 
 On lance l'exécution d'un pod avec la configuration du fichier hostPath/deployment.yml :
 ```bash
@@ -415,7 +415,7 @@ On peut alors relancer la commande :
 
 ![image](https://user-images.githubusercontent.com/62987942/222970940-0d4ed2b3-ed0d-411d-8793-d8347920b041.png)
 
-## PersistentVolume
+### Volumes
 
 Pour utiliser un PersistentVolume, il faut ouvrir un shell avec minikube :
 ```bash
@@ -468,7 +468,7 @@ On ouvre un shell dans ce pod avec la commande suivante :
 kubectl exec -it task-pv-pod -- /bin/bash
 ```
 
-Puis on entre ces commandes suivantes pour vérifier si le serveur web Nginx fonctionne correctement et si le fichier index.html est accessible à partir du volume hostPath :
+Puis on entre ces commandes suivantes pour vérifier que le serveur web Nginx fonctionne correctement et que le fichier index.html est accessible à partir du volume hostPath :
 ```bash
 apt update
 apt install curl
